@@ -10,7 +10,7 @@ def main():
     BROWSER: str = conf['BROWSER']
     if USERNAME == 'yourusername' or PASSWORD == 'yourpassword':
         print('Set your credentials in the config.yml file.')
-        time.sleep(3)
+        input()
         return
     if BROWSER == 'firefox':
         driver = webdriver.Firefox(executable_path="geckodriver.exe")
@@ -18,6 +18,7 @@ def main():
         driver = webdriver.Chrome(executable_path="chromedriver.exe")
     else:
         print('BROWSER must be set the chrome or firefox.')
+        input()
         return
     driver.get("http://10.0.0.1/iclogin")
     try:
